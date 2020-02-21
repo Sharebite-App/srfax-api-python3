@@ -10,7 +10,7 @@ import base64
 import logging
 
 import suds
-
+from suds.client import Client
 
 URL = 'https://www.srfax.com/SRF_UserFaxWebSrv.php?wsdl'
 
@@ -56,7 +56,7 @@ class SRFax(object):
         self.sender_email = sender_email
         self.account_code = account_code
         self.url = url or URL
-        self.client = suds.client.Client(self.url)
+        self.client = Client(self.url)
 
     def queue_fax(self, to_fax_number, filepath,
                   caller_id=None, sender_email=None, account_code=None):
