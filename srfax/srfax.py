@@ -9,7 +9,7 @@ import os.path
 import base64
 import logging
 
-from suds import client
+import suds
 
 
 URL = 'https://www.srfax.com/SRF_UserFaxWebSrv.php?wsdl'
